@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{super()}}
+    welcome to Flask project
+{% endblock %}
+
+{% block content %}
+    {% if user_ip %}
+        <h2>"Hola tu dirección ip es la siguiente {{user_ip}}"</h2>
+        <h2>"La lista de items es:  {{items}}"</h2>
+    
+    {% else %}
+       <a href="{{url_for('index')}}">Crear cookies</a> 
+
+    {% endif %}
+
+
+{% endblock %}
